@@ -46,4 +46,40 @@ public:
         }
         cout << "\nThe element deleted from the queue is:" << queue_array[FRONT] << "\n";
 
+        // cek jika antrian hanya memiliki satu elemen
+        if (FRONT == REAR) {
+            FRONT = -1;
+            REAR = -1;
+        }
+        else {
+            //jika element yang dihapus berada diposisi terakhir array,, kembali ke awal array
+            if (FRONT == max - 1)
+                FRONT = 0;
+            else
+                FRONT = FRONT + 1;
+        }
+    }
+    void display() {
+
+        int FRONT_POSITION = FRONT;
+        int REAR_POSITION = REAR;
+
+        // cek apakah antrian kosong
+        if (FRONT_POSITION == -1) {
+            cout << "Queue is empty\n";
+            return;
+        }
+
+        cout << "\nElement is the queue are...\n";
+
+        // jika FRONT <= REAR, iterasi dari FRONT hingga REAR 
+        if (FRONT_POSITION <= REAR_POSITION) {
+            while (FRONT_POSITION <= REAR_POSITION) {
+                cout << queue_array[FRONT_POSITION] << "  ";
+                FRONT_POSITION++;
+            }
+            cout << endl;
+        }
+       
+
         
