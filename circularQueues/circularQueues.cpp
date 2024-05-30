@@ -85,4 +85,33 @@ public:
                 cout << queue_array[FRONT_POSITION] << "  ";
             }
 
-        
+        FRONT_POSITION = 0;
+
+        //iterasi dari awal array hingga REAR 
+        while (FRONT_POSITION <= REAR_POSITION) {
+            cout << queue_array[FRONT_POSITION] << "  ";
+            FRONT_POSITION++;
+        }
+        cout << endl;
+    }
+};
+
+
+
+int main()
+{
+    Queues q;
+    char ch;
+
+    while (true) {
+        try {
+            cout << "Menu" << endl;
+            cout << "1. Implementasi insert operation" << endl;
+            cout << "2. Implementasi delet operation" << endl;
+            cout << "3. Display value" << endl;
+            cout << "4. exit" << endl;
+            cout << "Enter your chois (1-4): ";
+            cin >> ch;
+            cout << endl;
+
+           
